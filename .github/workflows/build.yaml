@@ -21,8 +21,6 @@ jobs:
         run: echo "::set-output name=PROJECT::$(cat project-to-build)"
       - name: Clone project
         run: git clone --depth=1 ${{ steps.get-project.outputs.PROJECT }} project
-      - name: Execute Gradle build
-        run: ./gradlew build
       - name: Build the app
         working-directory: ./project
         run: |
