@@ -13,11 +13,4 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: 17
-      - name: Setup Gradle
-        uses: gradle/gradle-build-action@v2    
-      - id: get-project
-        name: Get project name
-        run: echo "::set-output name=PROJECT::$(cat project-to-build)"
-      - name: Clone project
-        run: git clone --depth=1 ${{ steps.get-project.outputs.PROJECT }} project
 
